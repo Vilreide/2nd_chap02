@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Chapitre 2 : Notion de vecteur</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css" rel="stylesheet"/> <!-- Reveal -->
+<link href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/moon.css" rel="stylesheet"/> <!-- Reveal -->
+<link href="https://fonts.googleapis.com/css2?family=Computer+Modern+Serif&amp;display=swap" rel="stylesheet"><!-- Police computer modern (latex) -->
+<!-- STYLE MANIM -->
+<style>
+    body, .reveal {
+      font-family: 'Computer Modern Serif', serif;
+      background-color: black;
+      color: white;
+    }
+    .reveal h2 {font-family: 'Computer Modern Serif', serif; color: rgb(255, 37, 37); font-weight: bold; text-transform: none; font-size: 1.6em; margin-bottom: 0.6em;}
+    .reveal h3 {font-family: 'Computer Modern Serif', serif; color: rgb(22, 161, 22); font-weight: bold; text-transform: none; text-align: left; font-size: 1.3em; margin-bottom: 0.5em; } 
+</style>
+
+<!-- DIVISONS -->
+<style>
+  .definition, .definitions, .defprop, .prop, .theoreme, .exemple, .exemples, .remarque, .remarques, .mnemo {
+  padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; text-align: left; max-width: 95%; min-height: 4em;
+  }
+  .definition {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+  .definitions {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+  .defprop {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+  .prop {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+  .theoreme {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+  .exemple {border: 2px solid blue; background-color: rgba(0, 21, 255, 0.161);}
+  .exemples {border: 2px solid blue; background-color: rgba(0, 21, 255, 0.161);}
+  .remarque {border: 2px solid orange; background-color: rgba(255, 165, 0, 0.1);}
+  .remarques {border: 2px solid orange; background-color: rgba(255, 165, 0, 0.1);}
+  .mnemo {border: 2px solid #711082;; background-color: rgba(210, 14, 204, 0.195);}
+
+  
+  .definition::before, .definitions::before, .defprop::before, .prop::before, .theoreme::before, .exemple::before, .exemples::before, .remarque::before, .remarques::before, .mnemo::before {
+    display: block; text-align: left; font-weight: bold; margin-bottom: 0.5em;
+  }
+
+  .definition::before { content: "Définition :"; color: red; }
+  .definitions::before { content: "Définitions :"; color: red; }
+  .defprop::before { content: "Définition / Propriété :"; color: red; }
+  .prop::before { content: "Propriété :";  color: red; }
+  .theoreme::before { content: "Théorème :";  color: red; }
+  .exemple::before { content: "Exemple :";   color: rgb(77, 77, 236); }
+  .exemples::before { content: "Exemples :";   color: rgb(77, 77, 236); }
+  .remarque::before { content: "Remarque :";  color: orange; }
+  .remarques::before { content: "Remarques :";  color: orange; }
+  .mnemo::before{ content: "Mnémotechnie :"; color: #711082; }
+</style>
+
+<!-- CONFIGURATION MATHJAX -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]']],
+      processEscapes: true, packages: ['base', 'ams']
+    },
+    loader: {load: ['[tex]/ams']}, svg: {fontCache: 'global'}
+  };
+</script>
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+<!-- ----- DÉBUT DE LA PRÉSENTATION ------->
+
+<section>
+  <video class="fragment video-fragment" preload="auto">
+    <source src="media/bateau.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!---->
+<!-- I/ Premières propriétés -->
+<!---->
+
+<section data-auto-animate>
+  <h2>I/ Premières propriétés</h2>
+</section>
+
+<section data-auto-animate>
+  <h2>I/ Premières propriétés</h2>
+  <h3>1) Vecteur et translation</h3>
+  <div data-id="def" class="definition fragment" style="font-size: 0.89em;">
+    Soit $A$ et $B$ deux points du plan. On appelle <strong style="color:yellow;">vecteur</strong> l'objet <span style="color:yellow;">$\overrightarrow{AB}$</span> qui représente la <strong style="color:yellow;">translation</strong> de $A$ vers $B$.
+  </div>
+</section>
+
+<section data-auto-animate>
+  <div data-id="def" class="definition" style="font-size: 0.89em;">
+    Soit $A$ et $B$ deux points du plan. On appelle <strong style="color:yellow;">vecteur</strong> l'objet <span style="color:yellow;">$\overrightarrow{AB}$</span> qui représente la <strong style="color:yellow;">translation</strong> de $A$ vers $B$.
+  </div>
+  <div class="remarques" style="font-size: 0.89em;">
+    • Le vecteur $\overrightarrow{BB}$ noté <span style="color:yellow;">$\overrightarrow{0}$</span> est appelé <strong style="color:yellow;">vecteur nul</strong>, il induit une «&nbsp;<em>translation immobile</em> ».
+    <br>
+    • On peut aussi noter un vecteur sans points, ex : $\overrightarrow{u}=\overrightarrow{AB}$.
+  </div>
+</section>
+
+<section data-auto-animate>
+  <p data-id="texte" style="font-size: 0.9em;">
+    Écris pas wallah
+  </p>
+</section>
+<section data-auto-animate>
+  <p data-id="texte" style="color: black; font-size: 0.9em; position: relative; left: 1000px;">
+    Écris pas wallah
+  </p>
+</section>
+
+<section data-auto-animate>
+  <p style="font-size: 1em;">
+    Comment caractériser un vecteur ?
+  </p>
+</section>
+
+<section data-auto-animate>
+  <p style="font-size: 1em;">Comment caractériser un vecteur ?</p>
+  <video class="fragment video-fragment" preload="auto">
+    <source src="media/carac_vecteur.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section>
+  <div class="defprop">
+    <div class="fragment">
+      Un vecteur $\overrightarrow{AB}$ est caractérisé par :
+      <div class="fragment">&#10024; sa longueur appelée <strong style="color:yellow;">norme</strong> et notée 
+        <span style="color:yellow;">$\lVert \overrightarrow{AB} \rVert$</span> ;
+      </div>
+      <div class="fragment">&#10024; sa <strong style="color:yellow;">direction</strong> i.e. l'inclinaison de la droite $(AB)$ ;</div>
+      <div class="fragment">&#10024; et enfin son <strong style="color:yellow;">sens</strong> (de $A$ vers $B$).</div>
+    </div>
+  </div>
+</section>
+
+<section data-auto-animate>
+  <h3>2) Égalité de vecteurs</h3>
+  <div data-id="def" class="fragment definition">
+    <div class="fragment">
+      On dit que <span style="color:yellow;">$\overrightarrow{u}=\overrightarrow{\text{v}}$</span>
+      lorsque les vecteurs <span style="color:yellow;">$\overrightarrow{u}$</span> et 
+      <span style="color:yellow;">$\overrightarrow{\text{v}}$</span> ont même 
+      <strong style="color:yellow;">norme</strong>, même 
+      <strong style="color:yellow;">direction</strong> et même 
+      <strong style="color:yellow;">sens</strong>.
+    </div>
+  </div>
+</section>
+
+<section data-auto-animate>
+  <div data-id="def" class="definition">
+    <div>
+      On dit que <span style="color:yellow;">$\overrightarrow{u}=\overrightarrow{\text{v}}$</span>
+      lorsque les vecteurs <span style="color:yellow;">$\overrightarrow{u}$</span> et 
+      <span style="color:yellow;">$\overrightarrow{\text{v}}$</span> ont même 
+      <strong style="color:yellow;">norme</strong>, même 
+      <strong style="color:yellow;">direction</strong> et même 
+      <strong style="color:yellow;">sens</strong>.
+    </div>
+  </div>
+  <video class="fragment video-fragment" width="80%" preload="auto">
+    <source src="media/egalite_vecteurs.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section data-auto-animate>
+  <div data-id="propro" class="fragment prop">
+    <span style="color:yellow;">$\overrightarrow{AB}=\overrightarrow{CD}$</span> 
+    ssi $AB$<span style="color: yellow; font-size: 1.2em;">$D$</span>$C$ est un parallélogramme (éventuellement plat).
+  </div>
+</section>
+
+<section data-auto-animate>
+  <div data-id="propro" class="prop">
+    <span style="color:yellow;">$\overrightarrow{AB}=\overrightarrow{CD}$</span> 
+    ssi $AB$<span style="color: yellow; font-size: 1.2em;">$D$</span>$C$ est un parallélogramme (éventuellement plat).
+  </div>
+  <div class="fragment prop">
+    <p style="margin-top: -0.5em;">
+      Pour tous points distincts $A$ et $B$ :  
+      <span style="color:yellow;">$\overrightarrow{AM}=\overrightarrow{MB}$</span> 
+      ssi $M$ est le <strong style="color:yellow;">milieu</strong> de $[AB]$.
+    </p>
+  </div>
+</section>
+
+<!---->
+<!-- II/ Opérations sur les vecteurs -->
+<!---->
+
+<section data-auto-animate>
+  <h2>II/ Opérations sur les vecteurs</h2>
+</section>
+<section data-auto-animate>
+  <h2>II/ Opérations sur les vecteurs</h2>
+  <h3>1) Somme de vecteurs</h3>
+  <div data-id="yolo" class="fragment definition">
+    <!-- <p style="margin-top: -0.4em;"> -->
+      La translation de vecteur <span style="color:yellow;">$\overrightarrow{u}$</span> suivie de la translation de vecteur 
+      <span style="color:yellow;">$\overrightarrow{\text{v}}$</span> est une translation notée 
+      <span style="color:yellow;">$\overrightarrow{u}+\overrightarrow{\text{v}}$</span>.  
+    <!-- </p> -->
+  </div>
+</section>
+
+<section data-auto-animate>
+  <div data-id="yolo" class="definition">
+    <!-- <p style="margin-top: -0.4em;"> -->
+      La translation de vecteur <span style="color:yellow;">$\overrightarrow{u}$</span> suivie de la translation de vecteur 
+      <span style="color:yellow;">$\overrightarrow{\text{v}}$</span> est une translation notée 
+      <span style="color:yellow;">$\overrightarrow{u}+\overrightarrow{\text{v}}$</span>.  
+    <!-- </p> -->
+  </div>
+  <video class="fragment video-fragment preload="auto"">
+    <source src="media/somme_vecteur.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section>
+  <div class="prop">
+    <p class="fragment" style="margin-top: -0.5em;">
+      La <strong style="color:yellow;">Relation de Chasles</strong> énonce que
+      <span style="color:yellow;">$\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}$</span>.
+    </p>
+  </div>
+  <video class="fragment video-fragment" preload="auto">
+    <source src="media/chasles.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section>
+  <h3>2) Opposé d'un vecteur</h3>
+  <div class="fragment definition">
+    <p style="margin-top: -0.5em; margin-bottom: -0.4em;">
+      On appelle <strong style="color:yellow;">opposé</strong> du vecteur
+      $\overrightarrow{AB}$ le vecteur <span style="color:yellow;">$-\overrightarrow{AB}$</span>
+    </p>
+    défini par l'égalité <span style="color:yellow;">$-\overrightarrow{AB}=\overrightarrow{BA}$</span>.
+  </div>
+  <div class="fragment prop">
+    Pour tous points $A$, $B$ :<br>
+    <span style="color:yellow;">$\overrightarrow{AB}+(-\overrightarrow{AB})$</span> $=$ 
+    <span class="fragment">$\overrightarrow{AB}+\overrightarrow{BA}=\overrightarrow{AA}=\vec{0}$.</span>
+  </div>
+</section>
+
+<section>
+  <h3>3) Produit d'un vecteur par un nombre</h3>
+  <div data-fragment-index="0"class="fragment definition" style="font-size: 0.9em; margin-top: -0.5em; margin-bottom: 0em;">
+    <div data-fragment-index="1" class="fragment" style="margin-top: -0.8em;">
+      Soit <span style="color:white;">$\overrightarrow{u}$</span> un vecteur et $k\neq 0$ un nombre.
+      Le vecteur <span style="color:yellow;">$k\times\overrightarrow{u}$</span> :
+    </div>
+    <div class="fragment">
+      • a la même <strong style="color:yellow;">direction</strong> que $\overrightarrow{u}$ ;
+    </div>
+    <div class="fragment">
+      • a le même <strong style="color:yellow;">sens</strong> que $\overrightarrow{u}$ si 
+      <span style="color:yellow;">$k\gt 0$</span>, 
+      le sens contraire si <span style="color:yellow;">$k\lt 0$</span> ;
+    </div>
+    <div class="fragment">
+      • a pour <strong style="color:yellow;">norme</strong> 
+      <span style="color:yellow;">$|k| \times \lVert \overrightarrow{u}\rVert$</span>.
+    </div>
+  </div>
+  <video data-fragment-index="1" class="video-loop fragment" width="70%" muted playsinline 
+       preload="auto">
+    <source src="media/multiplication_vecteur.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section data-auto-animate>
+  <div data-id="fuck maga" class="remarques">
+    <span class="fragment" style="color:white;">• $k\times\Big(\overrightarrow{u}+ \overrightarrow{\text{v}}\Big)=k \times\overrightarrow{u} +k \times\overrightarrow{\text{v}}$ &nbsp; </span><br>
+    <span class="fragment" style="color:white;">• $0\times\overrightarrow{u} = \overrightarrow{0}$ &nbsp; </span>
+    
+  </div>
+</section>
+
+<section data-auto-animate>
+  <div data-id="fuck maga" class="remarques" style="margin-bottom: 2.5em;">
+    <span style="color:white;">• $k\times\Big(\overrightarrow{u}+ \overrightarrow{\text{v}}\Big)=k \times\overrightarrow{u} +k \times\overrightarrow{\text{v}}$ &nbsp; </span><br>
+    <span style="color:white;">• $0\times\overrightarrow{u} = \overrightarrow{0}$ &nbsp; </span>
+    
+  </div>
+  <div style="text-align: center; font-size: 1.2em; margin-top: 1em;">
+    <span style="font-size: 1.5em;">&#x2767;</span>
+    <span style="margin: 0 0.5em;">Fin de Chapitre</span>
+    <span style="font-size: 1.5em; display: inline-block; transform: scaleX(-1);">&#x2767;</span>
+  </div>
+</section>
+
+
+<!-- ----- FIN DE LA PRÉSENTATION ----- -->
+</div>
+</div>
+
+
+<!-- -->
+<!-- Scripts du body -->
+<!-- -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<!-- -->
+<!-- Vidéos -->
+<!-- -->
+
+<!-- video-fragment -->
+<script>
+  const doubleDelay = 350;
+  const videoStates = new Map(); // état indépendant pour chaque vidéo
+
+  // Réinitialiser les vidéos de la slide active
+  Reveal.on('slidechanged', event => {
+    event.currentSlide.querySelectorAll('.video-fragment').forEach(v => {
+      videoStates.set(v, { started: false, lastPressTime: 0, pressTimer: null });
+      v.pause();
+      v.currentTime = 0;
+    });
+  });
+
+  document.addEventListener("keydown", e => {
+    if (!["ArrowRight","ArrowDown","PageDown"," "].includes(e.key)) return;
+
+    const currentSlide = Reveal.getCurrentSlide();
+    // On cherche la vidéo fragment actuellement visible
+    const v = currentSlide.querySelector('.video-fragment.visible');
+    if (!v) return;
+
+    // Récupérer ou initialiser l'état
+    let state = videoStates.get(v);
+    if (!state) {
+      state = { started: false, lastPressTime: 0, pressTimer: null };
+      videoStates.set(v, state);
+    }
+
+    if (v.ended) return; // si terminée → laisser Reveal gérer
+
+    const now = Date.now();
+
+    if (!state.started) {
+      // Premier suivant → lancer la vidéo
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      v.play().catch(err => console.warn("Lecture bloquée :", err));
+      state.started = true;
+      state.lastPressTime = now;
+      videoStates.set(v, state);
+      return;
+    }
+
+    // Vidéo en cours
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    if (now - state.lastPressTime < doubleDelay) {
+      // Double suivant → sauter à la fin + fragment suivant
+      clearTimeout(state.pressTimer);
+      v.currentTime = v.duration;
+      state.lastPressTime = 0;
+      Reveal.nextFragment();
+    } else {
+      // Simple suivant → toggle pause/lecture
+      state.lastPressTime = now;
+      state.pressTimer = setTimeout(() => {
+        if (v.paused) {
+          v.play().catch(err => console.warn("Lecture bloquée :", err));
+        } else {
+          v.pause();
+        }
+        state.lastPressTime = 0;
+        videoStates.set(v, state);
+      }, doubleDelay);
+    }
+
+    videoStates.set(v, state);
+  }, true);
+
+  // Quand une vidéo se termine → débloquer le fragment suivant
+  document.querySelectorAll('.video-fragment').forEach(v => {
+    v.onended = () => {
+      Reveal.nextFragment();
+    };
+  });
+</script>
+
+<!-- video-loop -->
+<script>
+class VideoLoop {
+  constructor(selector = '.video-loop') {
+    this.selector = selector;
+    this.videos = document.querySelectorAll(selector);
+    this.init();
+  }
+
+  init() {
+    const playAllInSlide = (slide) => {
+      slide.querySelectorAll(this.selector).forEach(video => {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(err => console.warn("Lecture bloquée :", err));
+        }
+      });
+    };
+
+    // Quand Reveal est prêt
+    Reveal.on('ready', event => playAllInSlide(event.currentSlide));
+
+    // Quand on change de slide
+    Reveal.on('slidechanged', event => {
+      // Stopper toutes les vidéos de l’ancienne slide
+      document.querySelectorAll(this.selector).forEach(v => {
+        v.pause();
+        v.currentTime = 0;
+      });
+      // Lancer toutes les vidéos de la nouvelle slide
+      playAllInSlide(event.currentSlide);
+    });
+
+    // Config autoplay-friendly
+    this.videos.forEach(video => {
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.preload = "auto";
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  new VideoLoop('.video-loop');
+});
+</script>
+
+<!-- Config Reveal -->
+<script>
+    Reveal.initialize({ transition: 'fade', hash: true });
+    const retypeset = (elements = null) => {
+      if (window.MathJax) {
+        MathJax.typesetClear();
+        MathJax.typesetPromise(elements || undefined)
+          .catch(err => console.error("MathJax error:", err.message));
+      }
+    };
+    Reveal.on('ready', () => retypeset());
+    Reveal.on('slidechanged', () => {
+      if (window.MathJax && MathJax.typesetClear && MathJax.typesetPromise) {
+        MathJax.typesetClear(); MathJax.typesetPromise();
+      }
+    });
+    Reveal.on('fragmentshown', event => {
+      const elements = [event.fragment, ...event.fragment.querySelectorAll('*')]; retypeset(elements);
+    });
+</script>
+</body>
+</html>
