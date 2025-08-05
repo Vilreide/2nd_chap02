@@ -21,36 +21,56 @@
 
 <!-- DIVISONS -->
 <style>
-  .definition, .definitions, .defprop, .prop, .theoreme, .exemple, .exemples, .remarque, .remarques, .mnemo {
-  padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; text-align: left; max-width: 95%; min-height: 4em;
-  }
-  .definition {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
-  .definitions {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
-  .defprop {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
-  .prop {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
-  .theoreme {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
-  .exemple {border: 2px solid blue; background-color: rgba(0, 21, 255, 0.161);}
-  .exemples {border: 2px solid blue; background-color: rgba(0, 21, 255, 0.161);}
-  .remarque {border: 2px solid orange; background-color: rgba(255, 165, 0, 0.1);}
-  .remarques {border: 2px solid orange; background-color: rgba(255, 165, 0, 0.1);}
-  .mnemo {border: 2px solid #711082;; background-color: rgba(210, 14, 204, 0.195);}
-
-  
-  .definition::before, .definitions::before, .defprop::before, .prop::before, .theoreme::before, .exemple::before, .exemples::before, .remarque::before, .remarques::before, .mnemo::before {
-    display: block; text-align: left; font-weight: bold; margin-bottom: 0.5em;
+  .def, .defs, .defprop, .prop, .theo, .ex, .exs, .rem, .rems, .mnemo {
+    padding: 0.35em;
+    border-radius: 6px;
+    margin: 0.3em auto;
+    position: relative;
+    text-align: left;
+    max-width: 95%;
+    min-height: 4em;
   }
 
-  .definition::before { content: "Définition :"; color: red; }
-  .definitions::before { content: "Définitions :"; color: red; }
+  /* Couleurs et bordures */
+  .def, .defs, .defprop, .prop, .theo {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+  .ex, .exs {
+    border: 2px solid blue;
+    background-color: rgba(0, 21, 255, 0.16);
+  }
+  .rem, .rems {
+    border: 2px solid orange;
+    background-color: rgba(255, 165, 0, 0.1);
+  }
+  .mnemo {
+    border: 2px solid #711082;
+    background-color: rgba(210, 14, 204, 0.2);
+  }
+
+  /* Titres automatiques */
+  .def::before, .defs::before, .defprop::before, .prop::before, 
+  .theo::before, .ex::before, .exs::before, 
+  .rem::before, .rems::before, .mnemo::before {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .def::before { content: "Définition :"; color: red; }
+  .defs::before { content: "Définitions :"; color: red; }
   .defprop::before { content: "Définition / Propriété :"; color: red; }
-  .prop::before { content: "Propriété :";  color: red; }
-  .theoreme::before { content: "Théorème :";  color: red; }
-  .exemple::before { content: "Exemple :";   color: rgb(77, 77, 236); }
-  .exemples::before { content: "Exemples :";   color: rgb(77, 77, 236); }
-  .remarque::before { content: "Remarque :";  color: orange; }
-  .remarques::before { content: "Remarques :";  color: orange; }
-  .mnemo::before{ content: "Mnémotechnie :"; color: #711082; }
+  .prop::before { content: "Propriété :"; color: red; }
+  .theo::before { content: "Théorème :"; color: red; }
+  .ex::before { content: "Exemple :"; color: rgb(77, 77, 236); }
+  .exs::before { content: "Exemples :"; color: rgb(77, 77, 236); }
+  .rem::before { content: "Remarque :"; color: orange; }
+  .rems::before { content: "Remarques :"; color: orange; }
+  .mnemo::before { content: "Mnémotechnie :"; color: #711082; }
 </style>
+
 
 <!-- CONFIGURATION MATHJAX -->
 <script>
